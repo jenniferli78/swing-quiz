@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+
+form{
+	text-align: left;
+}
+
+div{
+	position: absolute;
+  	left: 40%;
+}

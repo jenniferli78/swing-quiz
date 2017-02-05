@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html>
+	<!--
+	value 1 - Jennifer
+	value 2 - Joanna
+	value 3 - Sasan
+	value 4 - Alfredo
+	value 5 - Tina
+	value 6 - Roberto
+	-->
+
+	<head>
+		  <link rel="stylesheet" href="style_quiz.css">
+		  <script type="text/javascript">
+		  	var result;
+
+			function check()
+			   {
+			      var question;
+			      var value1;
+			      var value2;
+			      var value3;
+			      var value4;
+			      var answer;
+			      var youranswer;
+			   
+			      question = 1;
+			      value1 = 0;
+			      value2 = 0;
+			      value3 = 0;
+			      value4 = 0;
+			      value5 = 0;
+			      value6 = 0;
+			      result = "";
+			      answer = 1;
+			      var choice;
+
+			    for (question = 1; question <= 9; question++) {
+			    	var q = document.forms['quiz'].elements['q'+question];
+            		for (var i = 0; i < q.length; i++) {
+               			if (q[i].checked) {
+                  			choice = q[i].value;
+               			}
+            		}
+            		if (choice == "value1") {
+               			value1++;
+            		}
+		            if (choice == "value2") {
+		               value2++;
+		            }
+		            if (choice == "value3") {
+		               value3++;
+		            }
+		            if (choice == "value4") {
+		               value4++;
+		            }
+		            if (choice == "value5") {
+		               value5++;
+		            }
+		            if (choice == "value6") {
+		               value6++;
+		            }
+         		}
+
+
+
+         	if (value1 >= value2 && value1 >= value3 && value1 >= value4 && value1 >= value5 && value1 >= value6 && value1 > 0) {
+         		// value1 is the highest
+         		result = "value1";
+     		}
+		    else if (value2 > value1 && value2 >= value3 && value2 >= value4 && value2 >= value5 && value2 >= value6 && value2 > 0) {
+		         // value2 is the highest
+		    	result = "value2";
+		    }
+		    else if (value3 > value1 && value3 > value2 && value3 >= value4 && value3 >= value5 && value3 >= value6 && value3 > 0) {
+		         // value3 is the highest
+		         result = "value3";
+		    }
+		    else if (value4 > value1 && value4 > value2 && value4 > value3 && value4 >= value5 &&  value4 >= value6 && value4 > 0) {
+		         // value4 is the highest
+		         result = "value4";
+		    }
+
+		    else if (value5 > value1 && value5 > value2 && value5 > value3 && value5 > value4 && value5 >= value6 && value5 > 0) {
+
+		         result = "value5";
+		    }
+		    else if (value6 > value1 && value6 > value2 && value6 > value3 && value6 > value4 && value6 > value5 && value6 > 0) {
+
+		         result = "value6";
+		    }
+
+
+		    else {
+		         result = "oops";  //if nothing chosen
+ 		    }	
+
+		    window.location = result + ".html"; //goes to the results page
+   		}
+
+		</script>
+	</head>
+
+	<body>
+		<div>
+		<form name="quiz" action="javascript:check();">
+		<p>Question 1: What is your favorite snack at work? </p>
+		<input type="radio" name="q1" value="value1" checked="checked"> Dried mangoes.<br>
+		<input type="radio" name="q1" value="value2"> I used to like dried mangoes but I got sick of them.<br>
+		<input type="radio" name="q1" value="value3"> I don't care. I just eat anything.<br>
+		<input type="radio" name="q1" value="value6"> Burritos. <br>
+		<input type="radio" name="q1" value="value5"> Hm! Why do you want to know?<br>
+		<input type="radio" name="q1" value="value4"> Well, I've been trying to drink more coffee.<br>
+		<br>
+
+		<p>Question 2: What are your thoughts on Town of Salem.</p>
+		<input type="radio" name="q2" value="value6" checked="checked"> Everyone just thinks I'm maf.<br>
+		<input type="radio" name="q2" value="value2"> I got hooked, but I keep losing whether I'm town or maf.<br>
+		<input type="radio" name="q2" value="value3"> Town of what? I'd rather do tasks than that stupid game! <br>
+		<input type="radio" name="q2" value="value5"> It is fun, but I don't trust Jen Jen.<br>
+		<input type="radio" name="q2" value="value1"> Fam, I'm the OG town of salem pro. I got two skins!<br>
+		<input type="radio" name="q2" value="value4"> I like it, but I HATE being maf. <br>		
+		<br>
+
+		<p>Question 3: You're stuck on a task. What do you do? </p>
+		<input type="radio" name="q3" value="value3" checked="checked"> I'll ping Paige about it.<br>
+		<input type="radio" name="q3" value="value2"> Maybe Ngan is still on.<br>
+		<input type="radio" name="q3" value="value5"> Oh I will ask our leader.<br>
+		<input type="radio" name="q3" value="value6"> Just pass it to Instagram.<br>
+		<input type="radio" name="q3" value="value4"> It's in the dex!<br>
+		<input type="radio" name="q3" value="value1"> Exclaim, "I have a question!"<br><br>
+
+		<p>Question 4: What is your pet peeve?</p>
+		<input type="radio" name="q4" value="value5" checked="checked">When I say excuse me and get kissed instead.<br>
+		<input type="radio" name="q4" value="value2"> When Patrick calls me giraffe.<br>
+		<input type="radio" name="q4" value="value4"> When people ask dumb questions.<br>
+		<input type="radio" name="q4" value="value1"> When I spend all day thinking of a joke and no one gets it.<br>
+		<input type="radio" name="q4" value="value6"> When the burrito place is closed.<br>
+		<input type="radio" name="q4" value="value3"> When people make fun of my accent.<br><br>
+
+		<p>Question 5: How was Sasan's party?</p>
+		<input type="radio" name="q5" value="value2" checked="checked"> I couldn't make it. I was on PTO.<br>
+		<input type="radio" name="q5" value="value6"> What party?<br>
+		<input type="radio" name="q5" value="value1"> I...I blacked out during the pregame okay.<br>
+		<input type="radio" name="q5" value="value4"> It was fun, but my two friends were such embarrassements! I can't take them anywhere!<br>
+		<input type="radio" name="q5" value="value3"> I wanted to make it but I was sick.<br>
+		<input type="radio" name="q5" value="value5"> I don't really remember much of it except for getting kicked out of the bar.<br>
+		<br>
+
+		<p>Question 6: What's your relationship with night shift? </p>
+		<input type="radio" name="q6" value="value4" checked="checked"> Ew. I don't associate with them!<br>
+		<input type="radio" name="q6" value="value1"> I like watching anime with them! They're so cool!<br>
+		<input type="radio" name="q6" value="value3"> I don't know much about them. I didn't even know who Jason was.<br>
+		<input type="radio" name="q6" value="value5"> They are weird. They cannot sit with us.<br>
+		<input type="radio" name="q6" value="value2"> Ugh, their shift lead is creepy. <br>
+		<input type="radio" name="q6" value="value6"> I used to be night shift, but I couldn't sleep.<br><br>
+
+		<p>Question 7: Who's your bff from day shift? </p>
+		<input type="radio" name="q7" value="value5" checked="checked">My bff is Jen Jen.<br>
+		<input type="radio" name="q7" value="value1"> Maybe Randy, because he sends me rare pepes.<br>
+		<input type="radio" name="q7" value="value2"> I talk with Rainbow pretty often.<br>
+		<input type="radio" name="q7" value="value4"> Phuong - oh wait...<br>		
+		<input type="radio" name="q7" value="value6"> No one. They think I don't talk. <br>
+		<input type="radio" name="q7" value="value3"> Alan. I always hang out with him, especially at Tahoe. <br><br>
+
+		<p>Question 8: How was Tahoe? </p>
+		<input type="radio" name="q8" value="value3" checked="checked"> So fun! I was worried Ken would make us sleep at 9, but we stayed up until 7am!<br>
+		<input type="radio" name="q8" value="value2"> I was helping to plan everything, and I was even in the chat, but I didn't go.<br>
+		<input type="radio" name="q8" value="value5"> Really fun! I learned a lot of new games.<br>
+		<input type="radio" name="q8" value="value4"> It was horrible! We were threatened!<br>	
+		<input type="radio" name="q8" value="value6"> They invited me like two days before they were going.<br>
+		<input type="radio" name="q8" value="value1"> It was lit.<br><br>
+
+		<p>Question 9: You're online shopping. What are you buying?</p>
+		<input type="radio" name="q9" value="value1" checked="checked"> Champion skins for League of Legends.<br>
+		<input type="radio" name="q9" value="value2"> Rip-off brands, so I can sell them for more.<br>
+		<input type="radio" name="q9" value="value3"> Tickets to a concert.<br>
+		<input type="radio" name="q9" value="value4"> Airplane tickets to go back to LA again.<br>		
+		<input type="radio" name="q9" value="value5"> Asian snacks.<br>
+		<input type="radio" name="q9" value="value6"> Dank shoes.<br><br>
+
+		<input type="submit" value="Submit answers">&nbsp;<input type="reset" value="Reset">
+
+
+		</form>
+		</div>
+	</body>
+
+</html>

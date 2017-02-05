@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+		  <link rel="stylesheet" href="style.css">
+		  <script type="text/javascript">
+		  	var result;
+
+			function check()
+			   {
+			      var question;
+			      var value1;
+			      var value2;
+			      var value3;
+			      var value4;
+			      var answer;
+			      var youranswer;
+			   
+			      question = 1;
+			      value1 = 0;
+			      value2 = 0;
+			      value3 = 0;
+			      value4 = 0;
+			      value5 = 0;
+			      value6 = 0;
+			      result = "";
+			      answer = 1;
+			      var choice;
+
+			    for (question = 1; question <= 9; question++) {
+			    	var q = document.forms['quiz'].elements['q'+question];
+            		for (var i = 0; i < q.length; i++) {
+               			if (q[i].checked) {
+                  			choice = q[i].value;
+               			}
+            		}
+            		if (choice == "value1") {
+               			value1++;
+            		}
+		            if (choice == "value2") {
+		               value2++;
+		            }
+		            if (choice == "value3") {
+		               value3++;
+		            }
+		            if (choice == "value4") {
+		               value4++;
+		            }
+		            if (choice == "value5") {
+		               value5++;
+		            }
+		            if (choice == "value6") {
+		               value6++;
+		            }
+         		}
+
+
+
+         	if (value1 >= value2 && value1 >= value3 && value1 >= value4 && value1 >= value5 && value1 >= value6 && value1 > 0) {
+         		// value1 is the highest
+         		result = "value1";
+     		}
+		    else if (value2 > value1 && value2 >= value3 && value2 >= value4 && value2 >= value5 && value2 >= value6 && value2 > 0) {
+		         // value2 is the highest
+		    	result = "value2";
+		    }
+		    else if (value3 > value1 && value3 > value2 && value3 >= value4 && value3 >= value5 && value3 >= value6 && value3 > 0) {
+		         // value3 is the highest
+		         result = "value3";
+		    }
+		    else if (value4 > value1 && value4 > value2 && value4 > value3 && value4 >= value5 &&  value4 >= value6 && value4 > 0) {
+		         // value4 is the highest
+		         result = "value4";
+		    }
+
+		    else if (value5 > value1 && value5 > value2 && value5 > value3 && value5 > value4 && value5 >= value6 && value5 > 0) {
+
+		         result = "value5";
+		    }
+		    else if (value6 > value1 && value6 > value2 && value6 > value3 && value6 > value4 && value6 > value5 && value6 > 0) {
+
+		         result = "value6";
+		    }
+
+
+		    else {
+		         result = "oops";  //if nothing chosen
+ 		    }	
+
+		    window.location = result + ".html"; //goes to the results page
+   		}
+
+		</script>
+	</head>
+
+	<body>
+		<form name="quiz" action="javascript:check();">
+		<p>Question 1</p>
+		<input type="radio" name="q1" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q1" value="value2"> Answer 2<br>
+		<input type="radio" name="q1" value="value3"> Answer 3<br>
+		<input type="radio" name="q1" value="value4"> Answer 4<br>
+		<input type="radio" name="q1" value="value5"> Answer 5<br>
+		<input type="radio" name="q1" value="value6"> Answer 6<br><br>
+
+		<p>Question 2</p>
+		<input type="radio" name="q2" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q2" value="value2"> Answer 2<br>
+		<input type="radio" name="q2" value="value3"> Answer 3<br>
+		<input type="radio" name="q2" value="value4"> Answer 4<br>		
+		<input type="radio" name="q2" value="value5"> Answer 5<br>
+		<input type="radio" name="q2" value="value6"> Answer 6<br><br>
+
+		<p>Question 3</p>
+		<input type="radio" name="q3" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q3" value="value2"> Answer 2<br>
+		<input type="radio" name="q3" value="value3"> Answer 3<br>
+		<input type="radio" name="q3" value="value4"> Answer 4<br>
+		<input type="radio" name="q3" value="value5"> Answer 5<br>
+		<input type="radio" name="q3" value="value6"> Answer 6<br><br>
+
+		<p>Question 4</p>
+		<input type="radio" name="q4" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q4" value="value2"> Answer 2<br>
+		<input type="radio" name="q4" value="value3"> Answer 3<br>
+		<input type="radio" name="q4" value="value4"> Answer 4<br>
+		<input type="radio" name="q4" value="value5"> Answer 5<br>
+		<input type="radio" name="q4" value="value6"> Answer 6<br><br>
+
+		<p>Question 5</p>
+		<input type="radio" name="q5" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q5" value="value2"> Answer 2<br>
+		<input type="radio" name="q5" value="value3"> Answer 3<br>
+		<input type="radio" name="q5" value="value4"> Answer 4<br>
+		<input type="radio" name="q5" value="value5"> Answer 5<br>
+		<input type="radio" name="q5" value="value6"> Answer 6<br><br>
+
+		<p>Question 6</p>
+		<input type="radio" name="q6" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q6" value="value2"> Answer 2<br>
+		<input type="radio" name="q6" value="value3"> Answer 3<br>
+		<input type="radio" name="q6" value="value4"> Answer 4<br>
+		<input type="radio" name="q6" value="value5"> Answer 5<br>
+		<input type="radio" name="q6" value="value6"> Answer 6<br><br>
+
+		<p>Question 7</p>
+		<input type="radio" name="q7" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q7" value="value2"> Answer 2<br>
+		<input type="radio" name="q7" value="value3"> Answer 3<br>
+		<input type="radio" name="q7" value="value4"> Answer 4<br>		
+		<input type="radio" name="q7" value="value5"> Answer 5<br>
+		<input type="radio" name="q7" value="value6"> Answer 6<br><br>
+
+		<p>Question 8</p>
+		<input type="radio" name="q8" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q8" value="value2"> Answer 2<br>
+		<input type="radio" name="q8" value="value3"> Answer 3<br>
+		<input type="radio" name="q8" value="value4"> Answer 4<br>		
+		<input type="radio" name="q8" value="value5"> Answer 5<br>
+		<input type="radio" name="q8" value="value6"> Answer 6<br><br>
+
+		<p>Question 9</p>
+		<input type="radio" name="q9" value="value1" checked="checked"> Answer 1<br>
+		<input type="radio" name="q9" value="value2"> Answer 2<br>
+		<input type="radio" name="q9" value="value3"> Answer 3<br>
+		<input type="radio" name="q9" value="value4"> Answer 4<br>		
+		<input type="radio" name="q9" value="value5"> Answer 5<br>
+		<input type="radio" name="q9" value="value6"> Answer 6<br><br>
+
+		<input type="submit" value="Submit answers">&nbsp;<input type="reset" value="Reset">
+
+
+		</form>
+	</body>
+
+</html>
